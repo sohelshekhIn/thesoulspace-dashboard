@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_globals_buttons",
+  "info": {
+    "displayName": "Button"
+  },
+  "options": {},
+  "attributes": {
+    "Button_Text": {
+      "type": "string"
+    },
+    "Button_Link": {
+      "type": "string"
+    }
+  }
+}

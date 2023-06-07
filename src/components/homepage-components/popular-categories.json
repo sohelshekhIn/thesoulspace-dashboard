@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_homepage_components_popular_categories",
+  "info": {
+    "displayName": "PopularCategories"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

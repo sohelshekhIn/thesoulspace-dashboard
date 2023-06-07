@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HeroBanner": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage-components.banner-component"
+    },
+    "BestSellers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage-components.best-sellers"
+    },
+    "PopularCategories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage-components.popular-categories"
+    }
+  }
+}

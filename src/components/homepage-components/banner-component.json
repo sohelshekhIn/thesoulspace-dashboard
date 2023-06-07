@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_homepage_components_banner_components",
+  "info": {
+    "displayName": "BannerComponent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Short_Text": {
+      "type": "string"
+    },
+    "Mid_Text": {
+      "type": "string"
+    },
+    "Big_Text": {
+      "type": "string"
+    },
+    "CTA_Button": {
+      "displayName": "Button",
+      "type": "component",
+      "repeatable": false,
+      "component": "globals.button"
+    },
+    "Description_Title": {
+      "type": "string"
+    },
+    "Description_Text": {
+      "type": "string"
+    },
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
