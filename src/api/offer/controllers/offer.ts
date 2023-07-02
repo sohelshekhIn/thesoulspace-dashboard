@@ -22,6 +22,7 @@ export default factories.createCoreController(
         data = {
           data: {
             valid: true,
+            offerCode: offer[0].Offer_Code,
             offerName: offer[0].Offer_Name,
             offerType: offer[0].Type,
             discountPercentage: offer[0].Percentage_Off,

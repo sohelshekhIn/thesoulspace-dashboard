@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_orders",
+  "info": {
+    "singularName": "up-order",
+    "pluralName": "up-orders",
+    "displayName": "up-orders",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderId": {
+      "type": "uid"
+    },
+    "cart": {
+      "type": "json",
+      "required": true
+    },
+    "contact": {
+      "type": "json",
+      "required": true
+    },
+    "value": {
+      "type": "json",
+      "required": true
+    },
+    "dateTime": {
+      "type": "string",
+      "required": true
+    },
+    "refferenceId": {
+      "type": "uid",
+      "required": true
+    }
+  }
+}
