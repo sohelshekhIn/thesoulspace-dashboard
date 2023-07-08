@@ -27,8 +27,8 @@ module.exports = ({ env }) => ({
         // ... any custom nodemailer options
       },
       settings: {
-        defaultFrom: "no-reply@soulspace.in",
-        defaultReplyTo: "no-reply@soulspace.in",
+        defaultFrom: "no-reply@thesoulspace.in",
+        defaultReplyTo: "no-reply@thesoulspace.in",
       },
     },
   },
