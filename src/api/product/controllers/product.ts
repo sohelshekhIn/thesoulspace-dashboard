@@ -82,6 +82,9 @@ export default factories.createCoreController(
             Product_Image: {
               fields: ["url", "width", "height", "formats"],
             },
+            categories: {
+              fields: ["id", "Name"],
+            },
           },
         });
 
@@ -102,3 +105,7 @@ export default factories.createCoreController(
     },
   })
 );
+
+// import { factories } from "@strapi/strapi";
+
+// export default factories.createCoreController("api::product.product");
