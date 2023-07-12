@@ -1,10 +1,11 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "db_healths",
   "info": {
     "singularName": "db-health",
     "pluralName": "db-healths",
-    "displayName": "DB-Health"
+    "displayName": "DB-Health",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
