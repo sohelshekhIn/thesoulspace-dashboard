@@ -2,7 +2,7 @@
   "name": "dashboard",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "The Soul Space Backend",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -21,7 +21,9 @@
     "strapi-plugin-populate-deep": "^2.0.0"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Sohel Shekh",
+    "email": "sohelshekh.ti4al@slmail.me",
+    "github": "https://github.com/sohelshekhIn"
   },
   "strapi": {
     "uuid": "18d3bd98-93e4-42c3-9104-6b4782e07e81"
