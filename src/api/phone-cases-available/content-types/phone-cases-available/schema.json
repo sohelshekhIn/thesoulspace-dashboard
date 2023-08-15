@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "phone_cases_availables",
+  "info": {
+    "singularName": "phone-cases-available",
+    "pluralName": "phone-cases-availables",
+    "displayName": "Phone Cases Available"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

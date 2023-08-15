@@ -34,6 +34,18 @@
     "refferenceId": {
       "type": "uid",
       "required": true
+    },
+    "payment_id": {
+      "type": "uid",
+      "default": "null",
+      "required": false
+    },
+    "payment_status": {
+      "type": "string",
+      "default": "pending"
+    },
+    "payment_fees": {
+      "type": "decimal"
     }
   }
 }
