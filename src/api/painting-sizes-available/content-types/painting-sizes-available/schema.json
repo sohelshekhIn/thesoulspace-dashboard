@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "painting_sizes_availables",
+  "info": {
+    "singularName": "painting-sizes-available",
+    "pluralName": "painting-sizes-availables",
+    "displayName": "Painting Sizes Available",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "size": {
+      "type": "string"
+    }
+  }
+}

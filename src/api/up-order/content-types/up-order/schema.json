@@ -46,6 +46,10 @@
     },
     "payment_fees": {
       "type": "decimal"
+    },
+    "userId": {
+      "type": "string",
+      "required": true
     }
   }
 }

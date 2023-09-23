@@ -14,7 +14,8 @@
   "attributes": {
     "orderId": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "dateTime": {
       "type": "string",
@@ -29,20 +30,49 @@
       "required": true
     },
     "contact": {
-      "type": "string"
-    },
-    "total": {
-      "type": "decimal",
+      "type": "string",
       "required": true
     },
-    "items": {
-      "type": "richtext",
+    "grandTotal": {
+      "type": "integer",
       "required": true
     },
     "upOrderId": {
-      "type": "uid",
+      "type": "integer",
       "required": true,
+      "unique": true,
       "private": true
+    },
+    "cartItems": {
+      "type": "richtext",
+      "private": true,
+      "required": true
+    },
+    "cartItemsJson": {
+      "type": "json",
+      "required": true
+    },
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "offerJson": {
+      "type": "json"
+    },
+    "orderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Placed",
+        "Dispatched",
+        "Delivered",
+        "Cancelled",
+        "Declined"
+      ],
+      "default": "Placed"
+    },
+    "totalQty": {
+      "type": "integer",
+      "required": true
     }
   }
 }

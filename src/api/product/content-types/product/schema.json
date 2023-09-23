@@ -28,9 +28,6 @@
       "targetField": "Name",
       "required": true
     },
-    "sizes": {
-      "type": "json"
-    },
     "Product_Image": {
       "type": "media",
       "multiple": true,

@@ -4,10 +4,11 @@
   "info": {
     "singularName": "phone-cases-available",
     "pluralName": "phone-cases-availables",
-    "displayName": "Phone Cases Available"
+    "displayName": "Phone Cases Available",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
