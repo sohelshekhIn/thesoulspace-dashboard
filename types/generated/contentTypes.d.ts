@@ -864,7 +864,11 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     cartItemsJson: Attribute.JSON & Attribute.Required;
     userId: Attribute.String & Attribute.Required;
     offerJson: Attribute.JSON;
-    orderStatus: Attribute.String & Attribute.DefaultTo<'Submitted'>;
+    orderStatus: Attribute.Enumeration<
+      ['Placed', 'Dispatched', 'Delivered', 'Cancelled', 'Declined']
+    > &
+      Attribute.DefaultTo<'Placed'>;
+    totalQty: Attribute.Integer & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -969,7 +973,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
         max: 99999;
       }>;
     slug: Attribute.UID<'api::product.product', 'Name'> & Attribute.Required;
-    sizes: Attribute.JSON;
     Product_Image: Attribute.Media & Attribute.Required;
     Short_Description: Attribute.String &
       Attribute.Required &
@@ -1026,6 +1029,7 @@ export interface ApiUpOrderUpOrder extends Schema.CollectionType {
     payment_id: Attribute.UID & Attribute.DefaultTo<'null'>;
     payment_status: Attribute.String & Attribute.DefaultTo<'pending'>;
     payment_fees: Attribute.Decimal;
+    userId: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

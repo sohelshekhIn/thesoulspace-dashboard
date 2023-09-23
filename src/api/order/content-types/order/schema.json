@@ -60,9 +60,19 @@
       "type": "json"
     },
     "orderStatus": {
-      "type": "string",
-      "required": false,
-      "default": "Submitted"
+      "type": "enumeration",
+      "enum": [
+        "Placed",
+        "Dispatched",
+        "Delivered",
+        "Cancelled",
+        "Declined"
+      ],
+      "default": "Placed"
+    },
+    "totalQty": {
+      "type": "integer",
+      "required": true
     }
   }
 }

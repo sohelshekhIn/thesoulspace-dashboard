@@ -102,7 +102,7 @@ export default {
       const contactObject: PmtWebhookUpOrdrContactType = order[0].contact;
       const valueObject: PmtWebhookUpOrdrValueType = order[0].value;
 
-      const userId = "1";
+      const userId = order[0].userId;
       const upOrderId = order[0].id;
       const dateTime = order[0].dateTime;
 
@@ -111,6 +111,7 @@ export default {
       const address = `${contactObject.address.line1} \n ${contactObject.address.line2} \n ${contactObject.address.landmark} \n ${contactObject.address.city} \n ${contactObject.address.state} \n ${contactObject.address.pincode}`;
       const grandTotal = parseInt(valueObject.grandTotal);
       const offerJson = valueObject.offer;
+      const totalQty = valueObject.totalQuantity;
 
       const updatePromise = strapi.entityService.update(
         "api::up-order.up-order",
@@ -138,6 +139,7 @@ export default {
             cartItems: productsMarkdown.join(""),
             cartItemsJson: products,
             offerJson: offerJson,
+            totalQty: totalQty,
             upOrderId: upOrderId,
           },
         }
@@ -147,7 +149,7 @@ export default {
       console.timeEnd("webhook");
       ctx.body = "ok";
     } catch (error) {
-      console.error("Error updating entity:", error);
+      console.error("Error updating entity:", error.details);
       ctx.body = "error";
       ctx.status = 403;
     }
