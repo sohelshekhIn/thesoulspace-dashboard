@@ -25,6 +25,10 @@ export interface HomepageComponentsBannerComponent extends Schema.Component {
     Description_Title: Attribute.String;
     Description_Text: Attribute.String;
     BannerImage: Attribute.Media;
+    Image_Padding: Attribute.String &
+      Attribute.DefaultTo<'p-[3rem] md:p-[10rem]'>;
+    Autoplay: Attribute.Enumeration<['true', 'false']>;
+    AutoPlaySpeed: Attribute.Integer;
   };
 }
 
@@ -48,11 +52,13 @@ export interface HomepageComponentsPopularCategories extends Schema.Component {
   collectionName: 'components_homepage_components_popular_categories';
   info: {
     displayName: 'PopularCategories';
+    description: '';
   };
   attributes: {
     Title: Attribute.String;
     Description: Attribute.String;
     Icon: Attribute.Media;
+    Name: Attribute.String & Attribute.Required;
   };
 }
 

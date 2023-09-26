@@ -34,6 +34,20 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "Image_Padding": {
+      "type": "string",
+      "default": "p-[3rem] md:p-[10rem]"
+    },
+    "Autoplay": {
+      "type": "enumeration",
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
+    "AutoPlaySpeed": {
+      "type": "integer"
     }
   }
 }
