@@ -10,7 +10,14 @@ export default factories.createCoreController(
     async find(ctx) {
       let query = {};
       // check if filters exist
-      if (ctx.query.filters === undefined) {
+      const filters = ctx.query.filters;
+      if (ctx.query.server === "true") {
+        // Server request: return only specific fields based on filters
+        query = {
+          fields: ["id", "Name", "Price", "slug"],
+          filters: filters,
+        };
+      } else {
         query = {
           fields: [
             "id",
@@ -24,13 +31,10 @@ export default factories.createCoreController(
             Product_Image: {
               fields: ["url", "width", "height", "formats"],
             },
+            categories: {
+              fields: ["id", "Name"],
+            },
           },
-        };
-      } else {
-        // get filters from query
-        const filters = ctx.query.filters;
-        query = {
-          fields: ["id", "Name", "Price", "slug"],
           filters: filters,
         };
       }
@@ -39,23 +43,37 @@ export default factories.createCoreController(
         .service("api::product.product")
         .find(query);
 
-      const results = response.results;
+      let results = response.results;
       const pagination = response.pagination;
 
-      if (ctx.query.filters === undefined) {
+      // if (ctx.query.server === "true") {
+      for (const result of results) {
+        result.Product_Image = result.Product_Image;
+        for (const image of result.Product_Image) {
+          // loop through the formats
+          for (const format in image.formats) {
+            let detailsOfFormat = {};
+            detailsOfFormat["url"] = image.formats[format].url;
+            detailsOfFormat["width"] = image.formats[format].width;
+            detailsOfFormat["height"] = image.formats[format].height;
+            image.formats[format] = detailsOfFormat;
+          }
+        }
+      }
+      // } else
+      if (ctx.query.category !== undefined) {
+        // if category is defined, filter the products based on the category
+        const category = ctx.query.category;
+        const filteredResults = [];
         for (const result of results) {
-          result.Product_Image = result.Product_Image;
-          for (const image of result.Product_Image) {
-            // loop through the formats
-            for (const format in image.formats) {
-              let detailsOfFormat = {};
-              detailsOfFormat["url"] = image.formats[format].url;
-              detailsOfFormat["width"] = image.formats[format].width;
-              detailsOfFormat["height"] = image.formats[format].height;
-              image.formats[format] = detailsOfFormat;
+          for (const cat of result.categories) {
+            if (cat.Name === category) {
+              filteredResults.push(result);
+              break;
             }
           }
         }
+        results = filteredResults;
       }
 
       return {
