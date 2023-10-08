@@ -14,6 +14,14 @@ export default factories.createCoreController(
       if (ctx.query.server === "true") {
         // Server request: return only specific fields based on filters
         query = {
+          populate: {
+            Product_Image: {
+              fields: ["url", "width", "height", "formats"],
+            },
+            categories: {
+              fields: ["id", "Name"],
+            },
+          },
           fields: ["id", "Name", "Price", "slug"],
           filters: filters,
         };
